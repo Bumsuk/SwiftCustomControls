@@ -28,6 +28,7 @@ struct MenuItem: View {
                 .imageScale(.large)
         }
         .shadow(color: .gray, radius: 0.2, x: 1, y: 1)
+        .transition(.move(edge: .trailing))
     }
 }
 
@@ -68,20 +69,28 @@ struct FloatingMenu: View {
     }
     
     private func showMenu() {
-        showMenuItem3.toggle()
+        withAnimation {
+            showMenuItem3.toggle()
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            showMenuItem2.toggle()
+            withAnimation {
+                showMenuItem2.toggle()
+            }
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            showMenuItem1.toggle()
+            withAnimation {
+                showMenuItem1.toggle()
+            }
         }
     }
 }
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        ZStack(alignment: .trailing) {
+            Color.clear
             FloatingMenu()
+                .padding()
         }
     }
 }
