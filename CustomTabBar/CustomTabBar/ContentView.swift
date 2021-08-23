@@ -108,8 +108,13 @@ struct ContentView: View {
                                 .frame(width: proxy.size.width/7 - 6, height: proxy.size.width/7 - 6)
                                 .foregroundColor(Color("DarkPurple"))
                                 .rotationEffect(.degrees(showPopUp ? 90 : 0))
+                                .transaction { transaction in
+                                    transaction.animation = .interactiveSpring(response: 0.60,
+                                                                               dampingFraction: 0.40,
+                                                                               blendDuration: 0.25)
+                                                            .speed(2)
+                                }
                                 .onTapGesture {
-                                    print("+ 이미지 터치!!! ")
                                     withAnimation(.interpolatingSpring(mass: 0.14, stiffness: 4, damping: 2, initialVelocity: 10).speed(3), {
                                         showPopUp.toggle()
                                     })
