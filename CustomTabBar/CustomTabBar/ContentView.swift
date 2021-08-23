@@ -115,9 +115,9 @@ struct ContentView: View {
                                                             .speed(2)
                                 }
                                 .onTapGesture {
-                                    withAnimation(.interpolatingSpring(mass: 0.14, stiffness: 4, damping: 2, initialVelocity: 10).speed(3), {
+                                    withAnimation(.interpolatingSpring(mass: 0.14, stiffness: 4, damping: 2, initialVelocity: 10).speed(3)) {
                                         showPopUp.toggle()
-                                    })
+                                    }
                                 }
                         }
                         .offset(x: 0, y: -tabContainerHeight/2)
