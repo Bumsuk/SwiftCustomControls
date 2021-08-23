@@ -63,11 +63,12 @@ struct ContentView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            let tabContainerHeight = proxy.size.height/8
+            let tabContainerHeight = proxy.size.height/10
             let tabWidth = proxy.size.width/5
-            let tabHeight = proxy.size.height/28
+            let tabHeight = proxy.size.height/30
 
             VStack(spacing: 0) {
+                // 상단 컨텐츠 영역
                 Group {
                     switch viewRouter.currentPage {
                     case .home:
@@ -82,6 +83,7 @@ struct ContentView: View {
                 }
                 .frame(width: proxy.size.width, height: proxy.size.height - tabContainerHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 //Spacer()
+                // 탭바 컨텐츠 영역
                 ZStack {
                     if showPopUp {
                         PlusMenu(widthAndHeight: 50)
@@ -113,7 +115,7 @@ struct ContentView: View {
                                     })
                                 }
                         }
-                        .offset(x: 0, y: -proxy.size.height/8/2)
+                        .offset(x: 0, y: -tabContainerHeight/2)
 
                         TabBarIcon(assignedPage: .records, width: tabWidth, height: tabHeight, systemIconName: "waveform", tabName: "Records")
                         TabBarIcon(assignedPage: .user, width: tabWidth, height: tabHeight, systemIconName: "person.crop.circle", tabName: "Account")
@@ -122,7 +124,7 @@ struct ContentView: View {
                 .frame(width: proxy.size.width, height: tabContainerHeight, alignment: .center)
                 .background(Color("TabBarBackground").shadow(radius: 2))
             }
-            .ignoresSafeArea(.all, edges: .bottom)
+            //.ignoresSafeArea(.all, edges: .bottom)
         }
     }
 }
