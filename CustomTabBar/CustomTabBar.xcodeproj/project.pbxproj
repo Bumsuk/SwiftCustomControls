@@ -11,7 +11,6 @@
 		C0AD35A326D12B7800EE36DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AD35A226D12B7800EE36DD /* ContentView.swift */; };
 		C0AD35A526D12B7900EE36DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0AD35A426D12B7900EE36DD /* Assets.xcassets */; };
 		C0AD35A826D12B7900EE36DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0AD35A726D12B7900EE36DD /* Preview Assets.xcassets */; };
-		C0AD35B226D12B8600EE36DD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AD35AF26D12B8600EE36DD /* HomeView.swift */; };
 		C0AD35B426D12B8600EE36DD /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AD35B126D12B8600EE36DD /* ViewRouter.swift */; };
 		C0DD3D2126D14E88004BEBFF /* PlusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DD3D2026D14E88004BEBFF /* PlusMenu.swift */; };
 /* End PBXBuildFile section */
@@ -23,7 +22,6 @@
 		C0AD35A426D12B7900EE36DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0AD35A726D12B7900EE36DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C0AD35A926D12B7900EE36DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C0AD35AF26D12B8600EE36DD /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C0AD35B126D12B8600EE36DD /* ViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		C0DD3D2026D14E88004BEBFF /* PlusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,7 +60,6 @@
 				C0AD35A226D12B7800EE36DD /* ContentView.swift */,
 				C0AD35B126D12B8600EE36DD /* ViewRouter.swift */,
 				C0DD3D2026D14E88004BEBFF /* PlusMenu.swift */,
-				C0AD35AF26D12B8600EE36DD /* HomeView.swift */,
 				C0AD35A426D12B7900EE36DD /* Assets.xcassets */,
 				C0AD35A926D12B7900EE36DD /* Info.plist */,
 				C0AD35A626D12B7900EE36DD /* Preview Content */,
@@ -148,7 +145,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0AD35B426D12B8600EE36DD /* ViewRouter.swift in Sources */,
-				C0AD35B226D12B8600EE36DD /* HomeView.swift in Sources */,
 				C0AD35A326D12B7800EE36DD /* ContentView.swift in Sources */,
 				C0AD35A126D12B7800EE36DD /* CustomTabBarApp.swift in Sources */,
 				C0DD3D2126D14E88004BEBFF /* PlusMenu.swift in Sources */,

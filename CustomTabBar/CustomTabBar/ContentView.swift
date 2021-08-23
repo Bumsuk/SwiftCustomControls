@@ -48,8 +48,9 @@ struct TabBarIcon: View {
 extension View {
     func applyTranstion() -> some View {
         self.transition(.asymmetric(insertion: .slide.combined(with: .scale(scale: 0.5)),
-                                    removal: .move(edge: .top).combined(with: .opacity).combined(with: .scale(scale: 0.5))))
+                                    removal: .move(edge: .top).combined(with: .opacity).combined(with: .scale(scale: 0.8))))
             .animation(.easeInOut)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
@@ -62,22 +63,25 @@ struct ContentView: View {
     
     var body: some View {
         GeometryReader { proxy in
+            let tabContainerHeight = proxy.size.height/8
             let tabWidth = proxy.size.width/5
             let tabHeight = proxy.size.height/28
 
-            VStack {
-                Spacer()
-                switch viewRouter.currentPage {
-                case .home:
-                    Text("Home").applyTranstion()
-                case .liked:
-                    Text("Liked").applyTranstion()
-                case .records:
-                    Text("Records").applyTranstion()
-                case .user:
-                    Text("User").applyTranstion()
+            VStack(spacing: 0) {
+                Group {
+                    switch viewRouter.currentPage {
+                    case .home:
+                        Text("Home").applyTranstion().background(Color.blue)
+                    case .liked:
+                        Text("Liked").applyTranstion().background(Color.red)
+                    case .records:
+                        Text("Records").applyTranstion().background(Color.yellow)
+                    case .user:
+                        Text("User").applyTranstion().background(Color.purple)
+                    }
                 }
-                Spacer()
+                .frame(width: proxy.size.width, height: proxy.size.height - tabContainerHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                //Spacer()
                 ZStack {
                     if showPopUp {
                         PlusMenu(widthAndHeight: 50)
@@ -115,7 +119,7 @@ struct ContentView: View {
                         TabBarIcon(assignedPage: .user, width: tabWidth, height: tabHeight, systemIconName: "person.crop.circle", tabName: "Account")
                     }
                 }
-                .frame(width: proxy.size.width, height: proxy.size.height/8, alignment: .center)
+                .frame(width: proxy.size.width, height: tabContainerHeight, alignment: .center)
                 .background(Color("TabBarBackground").shadow(radius: 2))
             }
             .ignoresSafeArea(.all, edges: .bottom)
